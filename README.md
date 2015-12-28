@@ -17,6 +17,9 @@ The only dependency is jQuery.
 
 3. Set the template that will be used.  `view.setTemplate(some_template);`
 
+4. Render the template while passing template variables as the argument.  `view.render(template_vars);`
+
+
 1. Create the HTML elements.  HTML element rules are as follows:
   - You can create any number of elements.
   - Elements must all share the same dimensions (width and height).

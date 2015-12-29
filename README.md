@@ -38,6 +38,10 @@ var some_template = "<h2>##title</h2>";
     some_template += "</ul>";
 ```
 
+For repeated content use the Two Pound's custom data-repeat HTML tag attribute.  For instance, the example below 
+
+
+
 1. The template is set using the setTemplate() method.
 
 2. 

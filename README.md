@@ -25,6 +25,10 @@ __TEMPLATE__
 
 Set template using setTemplate() method.  You can pass HTML within quotes as the argument directly or store the HTML as a javascript string variable and pass the variable as the argument.
 
+Template below uses multiline string variable format.  
+
+Template variables must be preceded with "two pounds" (two pound signs ##).  
+
 ```
 var some_template = "<h2>##title</h2>";
     some_template += "<ul>";

@@ -108,11 +108,3 @@ Options are passed into MadeToFit constructor as JSON object.  `var mtf = new Ma
   Example: 
   `{responsive : [450, 200, 100]}`  In this scenario the user implemented a responsive design such as using a CSS media query that changes the element's width to 200px and height to 100px when max screen is 450px.  The user must now register the breakpoint at 450px with the element's width and height. 
   
-
-## Credits
-
-TODO: Write credits
-
-## License
-
-TODO: Write license

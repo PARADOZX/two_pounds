@@ -11,13 +11,17 @@ The only dependency is jQuery.
 
 ## Usage
 
+__SETUP__
+
 1. Create instance of Two Pounds.  `var view = new View()`
 
-2. Set the element to which the template will be appended.  `view.setElem($('#main'));`
+2. Set the element to which the template content will be appended.  `view.setElem($('#main'));`
 
 3. Set the template that will be used.  `view.setTemplate(some_template);`
 
 4. Render the template while passing template variables as the argument.  `view.render(template_vars);`
+
+
 
 
 1. Create the HTML elements.  HTML element rules are as follows:

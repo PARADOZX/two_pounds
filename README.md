@@ -43,12 +43,12 @@ For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attri
 
 ```
 var other_template = "<h2>##category</h2>";
-other_template += "<>";
-other_template += "";
-other_template += "";
-other_template += "";
-other_template += "";
-other_template += "";
+other_template += "<ul>";
+other_template += "<li data-repeat>";
+    other_template += "";
+    other_template += "";
+other_template += "</li>";
+other_template += "</ul>";
 ```
 
 

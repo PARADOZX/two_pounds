@@ -38,7 +38,7 @@ var some_template = "<h2>##title</h2>";
     some_template += "</ul>";
 ```
 
-For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attribute.  For instance, the example below 
+For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attribute.  For instance, the example below includes a header description followed by 
 
 
 

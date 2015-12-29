@@ -27,7 +27,7 @@ Set template using setTemplate() method.  You can pass HTML within quotes as the
 
 Template below uses multiline string variable format.  
 
-Template variables must be preceded with "two pounds" (two pound signs ##).  
+Template variables must be preceded with "two pounds" (two pound signs ##).  This is how Two Pounds templating engine recognizes which text needs to be replaced.
 
 ```
 var some_template = "<h2>##title</h2>";

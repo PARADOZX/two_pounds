@@ -23,6 +23,17 @@ __SETUP__
 
 __TEMPLATE__
 
+Set template using setTemplate() method.  You can pass HTML within quotes as the argument directly or store the HTML as a javascript string variable and pass the variable as the argument.
+
+```
+var some_template = "<h2>##title</h2>";
+    some_template += "<ul>";
+        some_template += "<li>##item1</li>";
+        some_template += "<li>##item2</li>";
+        some_template += "<li>##item3</li>";
+    some_template += "</ul>";
+```
+
 1. The template is set using the setTemplate() method.
 
 2. 

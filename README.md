@@ -31,17 +31,24 @@ __Template variables must be preceded with "two pounds" (two pound signs ##).  T
 
 ```
 var some_template = "<h2>##title</h2>";
-    some_template += "<ul>";
-        some_template += "<li>##item1</li>";
-        some_template += "<li>##item2</li>";
-        some_template += "<li>##item3</li>";
-    some_template += "</ul>";
+    some_template += "<div>";
+        some_template += "<p>##message</p>";
+        some_template += "<div class='image-wrapper'>";
+            some_template += "<img src='##imgSrc' title='##imgTitle' alt='##imgAlt' />";
+        some_template += "</div>";
+    some_template += "</div>";
 ```
 
-For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attribute.  For instance, the example below includes a header description followed by content that will be reused for the list of movies that will follow the header.
+For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attribute.  For instance, the example below includes a header description followed by content that will be reused for the list of items that follow the header.
 
 ```
-
+var other_template = "<h2>##category</h2>";
+other_template += "<>";
+other_template += "";
+other_template += "";
+other_template += "";
+other_template += "";
+other_template += "";
 ```
 
 

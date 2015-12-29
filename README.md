@@ -11,7 +11,7 @@ The only dependency is jQuery.
 
 ## Usage
 
-### SETUP
+### Setup
 
 1. Create instance of Two Pounds.  `var view = new View()`
 
@@ -21,13 +21,13 @@ The only dependency is jQuery.
 
 4. Render the template while passing template variables as the argument.  `view.render(template_vars);`
 
-__TEMPLATE__
+### Template 
 
 Set template using setTemplate() method.  You can pass HTML within quotes as the argument directly or store the HTML as a javascript string variable and pass the variable as the argument.
 
 Template below uses multiline string variable format.  
 
-<u>Template variables must be preceded with "two pounds" (two pound signs ##).  This is how Two Pounds templating engine recognizes which text needs to be replaced.</u>
+__Template variables must be preceded with "two pounds" (two pound signs ##).  This is how Two Pounds templating engine recognizes which text needs to be replaced.__
 
 ```
 var some_template = "<h2>##title</h2>";

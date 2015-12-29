@@ -21,7 +21,11 @@ __SETUP__
 
 4. Render the template while passing template variables as the argument.  `view.render(template_vars);`
 
+__TEMPLATE__
 
+1. The template is set using the setTemplate() method.
+
+2. 
 
 
 1. Create the HTML elements.  HTML element rules are as follows:

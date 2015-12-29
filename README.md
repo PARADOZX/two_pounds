@@ -11,7 +11,7 @@ The only dependency is jQuery.
 
 ## Usage
 
-__SETUP__
+### SETUP
 
 1. Create instance of Two Pounds.  `var view = new View()`
 

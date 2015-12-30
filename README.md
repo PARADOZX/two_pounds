@@ -43,9 +43,8 @@ For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attri
 var other_template = "<h2>##category</h2>";
 other_template += "<ul>";
     other_template += "<li data-repeat>";
-        other_template += "<p>##release</p>";
-        other_template += "<p>##release</p>";
-        other_template += "<p>##description</p>";
+        other_template += "<p>##name</p>";
+        other_template += "<p>Release Date: ##release</p>";
     other_template += "</li>";
 other_template += "</ul>";
 ```
@@ -81,9 +80,10 @@ For instance, using the other_template example from above:
 var template_vars = [];
 template_vars['single'] = {"category" : "Star Wars Movies"};
 template_vars = [
-    {},
-    {},
-    {},
+    {"name" : "A New Hope", "release" : 1977},
+    {"name" : "The Empire Strikes Back", "release" : 1980},
+    {"name" : "Return of the Jedi", "release" : 1973},
+    {"name" : "The Force Awakens", "release" : 2015},
 ];
 ```
  

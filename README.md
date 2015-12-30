@@ -67,11 +67,11 @@ view.render({
 ```
 
 The ouptput is:
-```
-<h2>Chewbacca's Bowcaster</h2>
 
-This is Chewbacca's bowcaster. There are many like it, but this one is his.
+  <h2>Chewbacca's Bowcaster</h2>
 
-Chewbacca and his bow
-```     
+  This is Chewbacca's bowcaster. There are many like it, but this one is his.
+
+  Chewbacca and his bow
+ 
 

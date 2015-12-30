@@ -74,9 +74,7 @@ If your template renders repeated content an array of JSON objects must be passe
 
 For instance, using the other_template example from above: 
 ```javascript
-var template_vars = [];
-template_vars['single'] = {"category" : "Star Wars Movies"};
-template_vars = [
+var template_vars = [
     {"name" : "The Phantom Menace", "release" : 1999},
     {"name" : "Attack of the Clones", "release" : 2002},
     {"name" : "Revenge of the Sith", "release" : 2005},
@@ -85,6 +83,8 @@ template_vars = [
     {"name" : "Return of the Jedi", "release" : 1983},
     {"name" : "The Force Awakens", "release" : 2015},
 ];
+
+template_vars['single'] = {"category" : "Star Wars Movies"};
 
 view.render(template_vars);
 ```

@@ -29,7 +29,7 @@ Template below uses multiline string variable format.
 
 __Template variables must be preceded with "two pounds" (two pound signs ##).  This is how Two Pounds templating engine recognizes which text needs to be replaced.__
 
-```
+```javascript
 var some_template = "<h2>##title</h2>";
     some_template += "<div>";
         some_template += "<p>##message</p>";
@@ -41,7 +41,7 @@ var some_template = "<h2>##title</h2>";
 
 For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attribute.  For instance, the example below includes a header description followed by content that will be reused for the list of items that follow the header.
 
-```
+```javascript
 var other_template = "<h2>##category</h2>";
 other_template += "<ul>";
     other_template += "<li data-repeat>";

@@ -66,12 +66,16 @@ view.render({
 });
 ```
 
-The ouptput is:
+The resulting HTML is:
+```HTML
+<h2>Chewbacca's Bowcaster</h2>
+<div>
+    <p>This is Chewbacca's bowcaster.  There are many like it, but this one is his.</p>
+    <div class='image-wrapper'>
+        <img src='images/wookie_bow.png' title='Hairy never looked so good.' alt='Chewbacca and his bow' />
+    </div>
+</div>
+```
 
-  <h2>Chewbacca's Bowcaster</h2>
-
-  This is Chewbacca's bowcaster. There are many like it, but this one is his.
-
-  Chewbacca and his bow
  
 

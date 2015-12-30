@@ -43,8 +43,7 @@ For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attri
 var other_template = "<h2>##category</h2>";
 other_template += "<ul>";
     other_template += "<li data-repeat>";
-        other_template += "<p>##name</p>";
-        other_template += "<p>Release Date: ##release</p>";
+        other_template += "##name.  Release Date: ##release";
     other_template += "</li>";
 other_template += "</ul>";
 ```
@@ -85,9 +84,37 @@ template_vars = [
     {"name" : "Revenge of the Sith", "release" : 2005},
     {"name" : "A New Hope", "release" : 1977},
     {"name" : "The Empire Strikes Back", "release" : 1980},
-    {"name" : "Return of the Jedi", "release" : 1973},
+    {"name" : "Return of the Jedi", "release" : 1983},
     {"name" : "The Force Awakens", "release" : 2015},
 ];
+```
+
+The resulting HTML is: 
+```HTML
+<h2>##category</h2>
+    <ul>
+        <li data-repeat>
+            The Phantom Menace.  Release Date: 1999
+        </li>
+        <li data-repeat>
+            Attack of the Clones.  Release Date: 2002
+        </li>
+        <li data-repeat>
+            Revenge of the Sith.  Release Date: 2005
+        </li>
+        <li data-repeat>
+            A New Hope.  Release Date: 1977
+        </li>
+        <li data-repeat>
+            The Empire Strikes Back.  Release Date: 1980
+        </li>
+        <li data-repeat>
+            Return of the Jedi.  Release Date: 1983
+        </li>
+        <li data-repeat>
+            The Force Awakens.  Release Date: 2015
+        </li>
+    </ul>
 ```
  
 

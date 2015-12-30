@@ -33,9 +33,7 @@ __Template variables must be preceded with "two pounds" (two pound signs ##).  T
 var some_template = "<h2>##title</h2>";
     some_template += "<div>";
         some_template += "<p>##message</p>";
-        some_template += "<div class='image-wrapper'>";
-            some_template += "<img src='##imgSrc' title='##imgTitle' alt='##imgAlt' />";
-        some_template += "</div>";
+        some_template += "<img src='##imgSrc' title='##imgTitle' alt='##imgAlt' />";
     some_template += "</div>";
 ```
 
@@ -45,8 +43,9 @@ For repeated content use the Two Pound's custom __*data-repeat*__ HTML tag attri
 var other_template = "<h2>##category</h2>";
 other_template += "<ul>";
     other_template += "<li data-repeat>";
-        other_template += "<div>##release</div>";
-        other_template += "<div>##description</div>";
+        other_template += "<p>##release</p>";
+        other_template += "<p>##release</p>";
+        other_template += "<p>##description</p>";
     other_template += "</li>";
 other_template += "</ul>";
 ```
@@ -55,7 +54,7 @@ other_template += "</ul>";
 
 Rendering an object is as easy as passing JSON into the render() method or, if there is repeated content, an array of JSON objects.  If a key of the JSON matches a template variable the template variable will be replaced by the value of the corresponding JSON key.
 
-For instance, using the some_template example above: 
+For instance, using the some_template example from above: 
 ```javascript
 view.render({
     "title" : "Chewbacca's Bowcaster", 
@@ -71,11 +70,21 @@ The resulting HTML is:
 <h2>Chewbacca's Bowcaster</h2>
 <div>
     <p>This is Chewbacca's bowcaster.  There are many like it, but this one is his.</p>
-    <div class='image-wrapper'>
-        <img src='images/wookie_bow.png' title='Hairy never looked so good.' alt='Chewbacca and his bow' />
-    </div>
+    <img src='images/wookie_bow.png' title='Hairy never looked so good.' alt='Chewbacca and his bow' />
 </div>
 ```
 
+If your template renders repeated content an array of JSON objects must be passed into the render() method.  All template variables not part of the repeated content must be in JSON format defined under the index 'single' of the array.
+
+For instance, using the other_template example from above: 
+```javascript
+var template_vars = [];
+template_vars['single'] = {"category" : "Star Wars Movies"};
+template_vars = [
+    {},
+    {},
+    {},
+];
+```
  
 

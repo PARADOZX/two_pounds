@@ -80,6 +80,9 @@ For instance, using the other_template example from above:
 var template_vars = [];
 template_vars['single'] = {"category" : "Star Wars Movies"};
 template_vars = [
+    {"name" : "The Phantom Menace", "release" : 1999},
+    {"name" : "Attack of the Clones", "release" : 2002},
+    {"name" : "Revenge of the Sith", "release" : 2005},
     {"name" : "A New Hope", "release" : 1977},
     {"name" : "The Empire Strikes Back", "release" : 1980},
     {"name" : "Return of the Jedi", "release" : 1973},

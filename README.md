@@ -68,7 +68,7 @@ view.render({
 
 The ouptput is:
 
-Chewbacca's Bowcaster
+<h2>Chewbacca's Bowcaster</h2>
 
 This is Chewbacca's bowcaster. There are many like it, but this one is his.
 

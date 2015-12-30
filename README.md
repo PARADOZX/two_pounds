@@ -53,7 +53,7 @@ other_template += "</ul>";
 
 ### Render
 
-Rendering an object is as easy as passing JSON into the render() method.  If a key of the JSON matches a template variable the template variable will be replaced by the value of the corresponding JSON key.
+Rendering an object is as easy as passing JSON into the render() method or, if there is repeated content, an array of JSON objects.  If a key of the JSON matches a template variable the template variable will be replaced by the value of the corresponding JSON key.
 
 For instance, using the some_template example above: 
 ```
@@ -65,6 +65,9 @@ view.render({
     "imgAlt" : "Chewbacca and his bow"
 });
 ```
+
+    The output will be the following:
+        
 
 1. The template is set using the setTemplate() method.
 

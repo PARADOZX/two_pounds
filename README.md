@@ -90,15 +90,15 @@ template_vars = [
 The resulting HTML is: 
 ```HTML
 <h2>Star Wars Movies</h2>
-    <ul>
-        <li>The Phantom Menace.  Release Date: 1999</li>
-        <li>Attack of the Clones.  Release Date: 2002</li>
-        <li>Revenge of the Sith.  Release Date: 2005</li>
-        <li>A New Hope.  Release Date: 1977</li>
-        <li>The Empire Strikes Back.  Release Date: 1980</li>
-        <li>Return of the Jedi.  Release Date: 1983</li>
-        <li>The Force Awakens.  Release Date: 2015</li>
-    </ul>
+<ul>
+    <li>The Phantom Menace.  Release Date: 1999</li>
+    <li>Attack of the Clones.  Release Date: 2002</li>
+    <li>Revenge of the Sith.  Release Date: 2005</li>
+    <li>A New Hope.  Release Date: 1977</li>
+    <li>The Empire Strikes Back.  Release Date: 1980</li>
+    <li>Return of the Jedi.  Release Date: 1983</li>
+    <li>The Force Awakens.  Release Date: 2015</li>
+</ul>
 ```
  
 

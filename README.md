@@ -85,6 +85,8 @@ template_vars = [
     {"name" : "Return of the Jedi", "release" : 1983},
     {"name" : "The Force Awakens", "release" : 2015},
 ];
+
+view.render(template_vars);
 ```
 
 The resulting HTML is: 

@@ -36,7 +36,7 @@ View.prototype = function(){
      *@param {Array}
      *@return {Null} overwrites this.tempTemplate 
      */
-    function _populateRepeatTemplate(projects){
+    function _populateRepeatTemplate(argArr){
         
         if(!this.tempTemplate) throw new Error("No template set");
         
@@ -60,20 +60,21 @@ View.prototype = function(){
                 combinedCacheElement = '',
                 appendType = '';
                 
-            //loop through projects that are matched with the selected technology    
-            for(project in projects) {
-                if(project !== 'single') { 
+            //loop through JSON objects in argument array
+            for(index in argArr) {
+                
+                if(index !== 'single') { 
                     
                     //reset cacheElement for another iteration of data-repeat
                     cacheElement = repeatedElement;
     
-                    //for each of those projects loop through to find template variables (start with '##')
+                    //find template vars (##) in template
                     while(results = patt.exec(repeatedElement)) {
                                 
                         var result = results[1];
                         
-                        //loop through every template variable to see if it matches a property in the project object
-                        if (projects[project][result] !== undefined) {
+                        //check if JSON has a property with the result var name
+                        if (argArr[index][result] !== undefined) {
                             
                             /**
                              * determine if template variable resides within a data-repeat element that has a prev() sibling
@@ -85,26 +86,22 @@ View.prototype = function(){
                                 
                             } else if ($(this).parent().length > 0) {
                                 
-                                // if($(this).parent().prop("tagName") == 'BODY'|'body'){
-                                    
                                     appendType = "prepend";
                                     
-                                // }
-                                
                             } 
-                            cacheElement = cacheElement.replace(results[0], projects[project][result]);
+                            cacheElement = cacheElement.replace(results[0], argArr[index][result]);
                         }
                     }
                     //add one iteration of data-repeat a "combined" cache for appending
                     combinedCacheElement += cacheElement;
                 } 
 
-            } //end projects loop
+            } //end argArr loop
             
             $prev = $temp.find($(this)).prev();
             $parent = $temp.find($(this)).parent();
             
-            if(!appendType) throw new Error('appendType not selected.');
+            if(!appendType) throw new Error('Error occurred.  Check template variable formatting.');
             if(appendType === "after") $temp.find($prev).after(combinedCacheElement);
                 else if(appendType === "prepend") {
                     if($temp.find($parent).prop("nodeName") !== undefined) $temp.find($parent).prepend(combinedCacheElement);
@@ -125,18 +122,18 @@ View.prototype = function(){
          * check if 'single' object exists.  'single' object is a wrapper for any template variable(s) that only appears once 
          * on a template when _populateRepeatTemplate is called.
          */
-        for(project in projects) {
-            if(project === 'single') {
+        for(index in argArr) {
+            if(index === 'single') {
                 while(results = patt.exec(this.tempTemplate)){
-                    if (projects[project][results[1]] !== undefined){
-                        console.log('hi');
+                    if (argArr[index][results[1]] !== undefined){
+                        
                         //if arg obj property is array, join values
-                		if(projects[project][results[1]] instanceof Array){
+                		if(argArr[index][results[1]] instanceof Array){
                 		    var join = arg[results[1]].join(', ');
                 		    this.tempTemplate = this.tempTemplate.replace(results[0], join); 
                 		    $temp = $('<div>').append(this.tempTemplate);
                 		} else {
-                		    this.tempTemplate = this.tempTemplate.replace(results[0], projects[project][results[1]]); 
+                		    this.tempTemplate = this.tempTemplate.replace(results[0], argArr[index][results[1]]); 
                 		    $temp = $('<div>').append(this.tempTemplate);
                 		}
                     } else {
@@ -182,7 +179,7 @@ View.prototype = function(){
     	            this.tempTemplate = this.template;
     	            _populateRepeatTemplate.apply(this, [arg]);
     	            this.elem.append(this.tempTemplate);
-    	        } else throw new Error('Argument array not in correct format.');
+    	        } else throw new Error('Error occurred.  Check template variable formatting.');
     	    }
         }
     }
@@ -193,11 +190,22 @@ View.prototype = function(){
      * @returns {Boolean} false will throw error.
      */
     function _checkArgArray(arg) {
-        if(arg instanceof Array === true) 
-            if('single' in arg) 
-                for(position in arg)
-                    if(arg[position] instanceof Object)
-                        return true;
+        var checkSingle = false,
+            checkObject = true;
+            
+        if(arg instanceof Array === true)
+        
+            //is there a member besides single in array?
+            //are all members objects?
+            for(index in arg) {
+                if(index !== 'single') checkSingle = true;
+                if(arg[index] instanceof Object === false) checkObject = false;
+            }
+            
+            if(checkSingle && checkObject) {
+                if('single' in arg) return true;
+            }
+        
         return false;
     }
     
